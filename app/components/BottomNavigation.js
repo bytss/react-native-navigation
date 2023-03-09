@@ -13,18 +13,26 @@ function HomeScreen() {
   );
 }
 
-function DetailsScreen() {
+function ShopScreen() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Details Screen</Text>
+      <Text>Shop Screen</Text>
     </View>
   );
 }
 
-function SettingsScreen() {
+function FavoriteScreen() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Settings Screen</Text>
+      <Text>Favorite Screen</Text>
+    </View>
+  );
+}
+
+function AccountScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Account Screen</Text>
     </View>
   );
 }
@@ -37,6 +45,7 @@ export default function BottomNavigation() {
       screenOptions={{
         tabBarActiveTintColor: "#e91e63",
         tabBarShowLabel: false,
+        headerShown: false,
       }}
     >
       <Tab.Screen
@@ -50,20 +59,20 @@ export default function BottomNavigation() {
         }}
       />
       <Tab.Screen
-        name="Details"
-        component={DetailsScreen}
+        name="Shop"
+        component={ShopScreen}
         options={{
-          title: "Overview",
+          title: "Shop",
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="shoppingcart" color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        name="Settings"
-        component={SettingsScreen}
+        name="Favorite"
+        component={FavoriteScreen}
         options={{
-          title: "Settings",
+          title: "Favorite",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="heart-outline"
@@ -75,7 +84,7 @@ export default function BottomNavigation() {
       />
       <Tab.Screen
         name="Account"
-        component={SettingsScreen}
+        component={AccountScreen}
         options={{
           title: "Account",
           tabBarIcon: ({ color, size }) => (
